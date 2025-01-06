@@ -1,9 +1,8 @@
-# Exercice Form User
+# Exercice Select
 
-> Créez un formulaire pour ajouter à une liste user des utilisateurs, vous forcerez la saisie en majuscule dans le champ de saisie.
+> Créez un formulaire permettant de calculer les multiples d'un nombre entier, vous afficherez tous ses multiples inférieurs ou égale à 100.
+Créez un champ de sélection permettant de choisir un nombre parmi une liste de valeurs. Pensez à faire une boucle.
 
-> Vérifiez que l'utilisateur n'existe pas déjà dans la liste, si l'utilisateur se trompe alors affichez un message d'avertissement.
+> Vous afficherez le résultat sous le formulaire dans une liste ul/li.
 
-> Gérez également le cas où le champ est vide dans l'ajout d'un utilisateur.
-
-> Affichez la liste des utilsateurs sous le formulaire, affichez dans un composant Users la liste.
+> Les valeurs possibles sont : 3, 5, 7, Aucune
