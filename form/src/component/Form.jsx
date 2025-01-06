@@ -1,48 +1,43 @@
 import {useState} from "react";
 import Users from "./Users.jsx";
+import {useUserContext} from "../context/UserContext.jsx";
 
 const Form = () => {
  
- const [name, setName] = useState("")
- const [users, setUsers] = useState([])
- const [error, setError] = useState("")
+ const [state, dispatch] = useUserContext()
  
  
  const handleChange = (e) => {
   const {value} = e.target
-  setName(value.toUpperCase())
-  setError("")
+  dispatch({
+   type: "update_name",
+   payload: value
+  })
  }
  
  const handleSubmit = (e) => {
   e.preventDefault()
-  
-  if (name.trim() === "") {
-   setError("Merci de saisir une valeur")
+  if (state.name.trim() === "") {
+   dispatch({
+    type: "update_error",
+    payload: "Merci de saisir une valeur"
+   })
    return
   }
   
-  if (users.includes(name.trim())) {
-   setError("Cet utilisateur existe déjà")
-   return
-  }
-  
-  setUsers([
-   ...users,
-   name.trim()
-  ])
-  setName("")
+  dispatch({
+   type: "add_user"
+  })
  }
  
  return <>
   <form onSubmit={handleSubmit}>
-   <input type="text" name={"name"} value={name} onChange={handleChange}/>
+   <input type="text" name={"name"} value={state.name} onChange={handleChange}/>
    <input type={"submit"} value={"soumettre"}/>
   </form>
   {
-   error !== "" && <p style={{color: "red"}}>{error}</p>
+   state.error !== "" && <p style={{color: "red"}}>{state.error}</p>
   }
-  <Users users={users} />
  </>
 }
 

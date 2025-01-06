@@ -1,4 +1,8 @@
-const Users = ({users = []})=> {
+import {useUserContext} from "../context/UserContext.jsx";
+
+const Users = () => {
+ const [state] = useUserContext()
+ const {users} = state
 
  return <ul>
   {
