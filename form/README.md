@@ -1,8 +1,9 @@
-# React + Vite
+# Exercice Form User
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Créez un formulaire pour ajouter à une liste user des utilisateurs, vous forcerez la saisie en majuscule dans le champ de saisie.
 
-Currently, two official plugins are available:
+> Vérifiez que l'utilisateur n'existe pas déjà dans la liste, si l'utilisateur se trompe alors affichez un message d'avertissement.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> Gérez également le cas où le champ est vide dans l'ajout d'un utilisateur.
+
+> Affichez la liste des utilsateurs sous le formulaire, affichez dans un composant Users la liste.
