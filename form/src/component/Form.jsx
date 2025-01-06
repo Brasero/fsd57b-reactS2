@@ -1,36 +1,49 @@
 import {useState} from "react";
+import Users from "./Users.jsx";
 
 const Form = () => {
  
- const [formState, setFormState] = useState({
-  name: "",
-  firstName: ""
- })
+ const [name, setName] = useState("")
+ const [users, setUsers] = useState([])
+ const [error, setError] = useState("")
  
  
  const handleChange = (e) => {
-  const {name, value} = e.target
-  setFormState({
-   ...formState,
-   [name]: value
-  })
+  const {value} = e.target
+  setName(value.toUpperCase())
+  setError("")
  }
  
  const handleSubmit = (e) => {
   e.preventDefault()
-  setFormState({
-   name: "",
-   firstName: ""
-  })
+  
+  if (name.trim() === "") {
+   setError("Merci de saisir une valeur")
+   return
+  }
+  
+  if (users.includes(name.trim())) {
+   setError("Cet utilisateur existe déjà")
+   return
+  }
+  
+  setUsers([
+   ...users,
+   name.trim()
+  ])
+  setName("")
  }
  
- return <form onSubmit={handleSubmit}>
-  <input type="text" name={"name"} value={formState.name} onChange={handleChange} />
-  <p>{formState.name}</p>
-  <input type={"text"} name={"firstName"}  value={formState.firstName} onChange={handleChange} />
-  <p>{formState.firstName}</p>
-  <input type={"submit"} value={"soumettre"}/>
- </form>
+ return <>
+  <form onSubmit={handleSubmit}>
+   <input type="text" name={"name"} value={name} onChange={handleChange}/>
+   <input type={"submit"} value={"soumettre"}/>
+  </form>
+  {
+   error !== "" && <p style={{color: "red"}}>{error}</p>
+  }
+  <Users users={users} />
+ </>
 }
 
 export default Form;
