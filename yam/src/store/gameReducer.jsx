@@ -1,7 +1,16 @@
 import {useReducer} from "react";
 
+const initialResult = {
+ triple6: 0,
+ triple5: 0,
+ triple4: 0,
+ triple3: 0,
+ triple2: 0,
+ triple1: 0
+}
+
 const initialState = {
- triple: 0,
+ result: initialResult,
  nbLaunch: 0,
  stats: false
 }
@@ -18,7 +27,7 @@ const gameReducer = (state, action) => {
   case "LAUNCH":
    return {
     ...state,
-    triple: game(state.nbLaunch),
+    result: game(state.nbLaunch),
     stats: true
    }
    
@@ -26,7 +35,7 @@ const gameReducer = (state, action) => {
    return {
     ...state,
     stats: false,
-    triple: 0,
+    result: initialResult,
     nbLaunch: 0
    }
   
@@ -36,12 +45,23 @@ const gameReducer = (state, action) => {
 }
 
 const game = (num) => {
- const de = () => Math.floor(Math.random() * 6 ) + 1;
- let result = 0;
+ const result = {
+  triple6: 0,
+  triple5: 0,
+  triple4: 0,
+  triple3: 0,
+  triple2: 0,
+  triple1: 0
+ };
+ const de = () => Math.floor(Math.random() * 6) + 1;
+ console.log(result)
  
  for (let i = 0; i < num; i++) {
   const launch = [de(), de(), de()];
-  if (launch.reduce((acc, curr) => acc + curr, 0) === 18) result++;
+  if (launch[0] === launch[1] && launch[1] === launch[2]) {
+   const key = `triple${launch[0]}`;
+   result[key]++;
+  }
  }
  return result
 }

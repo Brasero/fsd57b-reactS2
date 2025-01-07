@@ -1,10 +1,13 @@
 import {useGameContext} from "../context/GameContext.jsx";
 import {useNavigate} from "react-router-dom";
+import Result from "../component/Result.jsx";
 
 const Stats = () => {
  
+ const array = Array(6).fill("")
+ 
  const [state, dispatch] = useGameContext();
- const {nbLaunch, triple} = state;
+ const {nbLaunch, result} = state;
  
  const navigate = useNavigate()
  
@@ -22,8 +25,11 @@ const Stats = () => {
  return (
   <>
    <div>Nombre de lancé : <span style={{color: "black", fontWeight: "bold"}}>{nbLaunch}</span></div>
-   <div>Nombre de brelans de 6 : <span style={{color: "black", fontWeight: "bold"}}>{triple}</span></div>
-   <div>Pourcentage de brelans de 6 : <span style={{color: "black", fontWeight: "bold"}}>{((triple / nbLaunch) * 100).toFixed(2)}%</span></div>
+   {
+    array.map((_, i) => {
+     return <Result key={i} result={result[`triple${i+1}`]} nb={i+1} />
+    })
+   }
    <div>
     <button onClick={handleReset}>Reinitialiser</button>
     <button onClick={goHome}>Retour</button>
