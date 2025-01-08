@@ -1,0 +1,2 @@
+export const SET_DRAGON_NAME = "DRAGON/SET_NAME"
+export const ADD_DRAGON = "DRAGON/ADD"
