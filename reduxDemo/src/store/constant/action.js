@@ -1,0 +1,4 @@
+export const ADD_MESSAGE = "ADD_MESSAGE";
+export const SET_MESSAGE = "SET_MESSAGE";
+export const INCREMENT = "COUNTER/INCREMENT";
+export const DECREMENT = "COUNTER/DECREMENT";
