@@ -29,7 +29,7 @@ const dragonReducer = (state = initialState, action) => {
      id: id++,
      name: ""
     },
-    dragons: state.dragons.concat([state.dragon.trim()])
+    dragons: state.dragons.concat([{...state.dragon, name: state.dragon.name.trim()}])
    }
   
   default:

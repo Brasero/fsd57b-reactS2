@@ -24,13 +24,17 @@ const Form = () => {
    setError("Ce dragon se trouve déjà dans la liste.")
    return
   }
+  if (dragon.name.trim() === "") {
+   setError("Le nom du dragon ne peut pas être vide.")
+   return
+  }
   setError("")
   dispatch(addDragon())
  }
  
  return <form onSubmit={handleSubmit}>
   <input type={"text"} value={dragon.name} onChange={handleChange} placeholder={"Nom du dragon"} />
-  {error !== "" && <p style={{color: "red"}}>{error}</p>}
+  <p style={{color: "red"}}>{error !== "" && error}</p>
   <button role={"button"}>Ajouter</button>
  </form>
 }
