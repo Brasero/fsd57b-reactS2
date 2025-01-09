@@ -1,5 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {selectLogs} from "../store/selector/logSelector.js";
+import {delayedReset, resetLog} from "../store/reducer/logReducer.js";
 
 const Log = () => {
  
@@ -7,7 +8,7 @@ const Log = () => {
  const dispatch = useDispatch()
  
  const handleClick = () => {
-  // dispatch(resetLog())
+   dispatch(delayedReset())
  }
  
  
