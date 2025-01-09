@@ -35,7 +35,7 @@ const dragonReducer = (state = initialState, action) => {
   case DELETE_DRAGON:
    return {
     ...state,
-    dragons: state.dragons.filter((drag) => drag.id !== action.payload)
+    dragons: state.dragons.filter((drag) => drag.id !== action.payload.id)
    }
    
   case RANDOM_DRAGON:

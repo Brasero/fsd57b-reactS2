@@ -6,7 +6,7 @@ const DragonItem = ({dragon}) => {
  const dispatch = useDispatch()
  
  const handleClick = () => {
-  dispatch(deleteDragon(dragon.id))
+  dispatch(deleteDragon({id: dragon.id, name: dragon.name}))
  }
  
  return <li><span>{dragon.name}</span><button onClick={handleClick} style={{background: "red"}}>X</button></li>

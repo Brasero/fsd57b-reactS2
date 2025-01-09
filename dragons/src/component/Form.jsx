@@ -29,7 +29,7 @@ const Form = () => {
    return
   }
   setError("")
-  dispatch(addDragon())
+  dispatch(addDragon(dragon.name))
  }
  
  return <form onSubmit={handleSubmit}>

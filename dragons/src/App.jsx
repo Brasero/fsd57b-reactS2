@@ -3,6 +3,7 @@ import Form from "./component/Form.jsx";
 import List from "./component/List.jsx";
 import {useDispatch} from "react-redux";
 import {sortRandomDragon} from "./store/action/dragon-action.js";
+import Log from "./component/Log.jsx";
 
 function App() {
  
@@ -13,6 +14,7 @@ function App() {
  }
  
  return (<>
+   <Log />
    <h1>Liste de dragons</h1>
    <Form/>
    <button onClick={handleClick}>Random</button>

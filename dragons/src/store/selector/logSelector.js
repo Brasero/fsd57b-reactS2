@@ -1,0 +1,1 @@
+export const selectLogs = (state) => state.logReducer.logs;

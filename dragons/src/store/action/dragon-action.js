@@ -7,9 +7,10 @@ export const setDragonName = (payload) => {
  }
 }
 
-export const addDragon = () => {
+export const addDragon = (payload) => {
  return {
-  type: ADD_DRAGON
+  type: ADD_DRAGON,
+  payload
  }
 }
 
