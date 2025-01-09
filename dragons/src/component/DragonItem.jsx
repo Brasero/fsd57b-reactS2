@@ -1,5 +1,5 @@
 import {useDispatch} from "react-redux";
-import {deleteDragon} from "../store/action/dragon-action.js";
+import {deleteDragon} from "../store/reducer/dragonReducer.js";
 
 const DragonItem = ({dragon}) => {
  

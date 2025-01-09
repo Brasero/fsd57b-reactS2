@@ -1,6 +1,5 @@
 import {useDispatch, useSelector} from "react-redux";
 import {selectLogs} from "../store/selector/logSelector.js";
-import {resetLog} from "../store/action/log-action.js";
 
 const Log = () => {
  
@@ -8,7 +7,7 @@ const Log = () => {
  const dispatch = useDispatch()
  
  const handleClick = () => {
-  dispatch(resetLog())
+  // dispatch(resetLog())
  }
  
  

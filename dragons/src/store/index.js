@@ -1,11 +1,12 @@
 import dragonReducer from "./reducer/dragonReducer.js";
-import {legacy_createStore as createStore, combineReducers, applyMiddleware} from "redux";
-import logReducer from "./reducer/logReducer.js";
+import {configureStore} from "@reduxjs/toolkit";
 import logMiddleware from "./middleware/logMiddleware.js";
 
-const store = createStore(combineReducers({
- dragonReducer,
- logReducer
-}), applyMiddleware(logMiddleware))
+const store = configureStore({
+ reducer: {
+  dragonReducer
+ },
+ middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([logMiddleware])
+})
 
 export default store;

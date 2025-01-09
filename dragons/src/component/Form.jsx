@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {selectDragon, selectDragons} from "../store/selector/dragonSelector.js";
-import {addDragon, setDragonName} from "../store/action/dragon-action.js";
+import {addDragon, setDragonName} from "../store/reducer/dragonReducer.js";
 import {useState} from "react";
 
 const Form = () => {
