@@ -1,0 +1,35 @@
+.NavBar {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #213547;
+  font-family: var(--primary-font-family);
+
+  &__user {
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: var(--secondary-font-family);
+  }
+
+  &__nav {
+    ul {
+      list-style: none;
+
+      a {
+       color: white;
+        transition: var(--transition);
+        &.active {
+          color: var(--secondary-color);
+        }
+        &:hover {
+          color: var(--secondary-shade-color);
+        }
+      }
+    }
+  }
+}

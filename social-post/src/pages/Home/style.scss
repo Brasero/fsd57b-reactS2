@@ -1,0 +1,22 @@
+#Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  h2 {
+    margin-bottom: 20px;
+    font-family: var(--primary-font-family);
+    font-size: 1.9rem;
+  }
+
+  .Home__posts {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    justify-items: center;
+  }
+}

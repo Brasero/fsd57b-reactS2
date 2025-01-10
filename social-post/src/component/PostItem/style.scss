@@ -1,0 +1,36 @@
+.PostItem {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: min(100%, 700px);
+    .PostItem__title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: var(--primary-color);
+    }
+    .PostItem__body {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    .PostItem__footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        align-items: center;
+        .PostItem__author {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+        .PostItem__link {
+            font-size: 14px;
+            color: var(--secondary-color);
+            transition: var(--transition);
+          &:hover {
+            color: var(--secondary-shade-color);
+          }
+        }
+    }
+}

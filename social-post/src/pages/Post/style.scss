@@ -1,0 +1,92 @@
+#Post {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
+
+  .Post__title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+  }
+
+  .Post__body {
+    margin-bottom: 20px;
+  }
+
+  .Post__author {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .Post__commentTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .Post__comments {
+    margin-bottom: 10px;
+    list-style: none;
+    padding: 1rem;
+    border-radius: 5px;
+
+    li {
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .Post__addCommentTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .Post__comment {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    &__input {
+      width: 99%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      line-height: 1.5;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    &__button {
+      padding: 10px 20px;
+      background: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      line-height: 1.5;
+      font-family: 'Roboto', sans-serif;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:hover {
+        background: var(--primary-shade-color);
+      }
+    }
+  }
+}
